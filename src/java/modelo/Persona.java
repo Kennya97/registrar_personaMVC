@@ -43,6 +43,23 @@ this.apellidos = apellidos;
 this.nombres = nombres;
 }
  
+  public boolean eliminar(){
+         try {
+             String miQuery = "DELETE FROM tb_persona WHERE dui_persona='" + dui +"';";
+             int estado = 0;
+             state = cnn.createStatement();
+             estado = state.executeUpdate(miQuery);
+             if(estado == 1){
+               return true;
+             }
+         } catch (SQLException ex) {
+             Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error: "+ex.getMessage());
+         }
+         return false;
+     }
+ 
+ 
  
 //METODO PARA REGISTRAR UNA NUEVA PERSONA
  
