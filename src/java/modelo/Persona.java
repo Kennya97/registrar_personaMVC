@@ -109,4 +109,8 @@ return false;
         this.nombres = nombres;
     }
 
+    public ArrayList<Persona> consultarRegistros() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
