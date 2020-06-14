@@ -118,6 +118,7 @@ public ArrayList<Persona> consultarRegistros(){
     public void setNombres(String nombres) {
         this.nombres = nombres;
     }
+ }
 
     
 
