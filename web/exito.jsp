@@ -10,9 +10,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>JSP Page</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<h1>Registro Insertado Correctamente!</h1>
-<a href="index.jsp">Volver al inicio</a>
+<div class="container pt-5 ml-5 mr-5">
+        <div class="row">
+            <div class="col-md-7">
+               <h1 class="alert-danger">Registro insertado correctamente :) </h1>
+                <a class="btn btn-primary mt-3" href="index.jsp" role="button">Volver a Inicio</a> 
+            </div>
+        </div>
+    </div>
 </body>
 </html>
