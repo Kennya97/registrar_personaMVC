@@ -9,9 +9,10 @@
     </head>
     <body>
       
-   <div class="container pt-5">
-       <div class="col-md-8">
-        <h1 class="alert-info">Todos los registros</h1> 
+   <div class="container pt-5 ml-5 mr-5">
+       <div class="row">
+       <div class="col-sm-12 col-md-7">
+        <h1 class="alert-primary">Todos los registros</h1> 
     <table class="table table-bordered table-hover">
         <thead class="thead-dark">
     <tr>
@@ -37,7 +38,7 @@
        <a class="btn btn-primary" href="index.jsp" role="button">Volver a inicio</a>
         </div>       
    </div>
-        
+ </div>
         
     </body>
 </html>

@@ -16,7 +16,7 @@
 <div class="container pt-5 ml-5 mr-5">
         <div class="row">
             <div class="col-md-7">
-               <h1 class="alert-danger">Registro insertado correctamente :) </h1>
+               <h1 class="alert-danger">Registro insertado :) </h1>
                 <a class="btn btn-primary mt-3" href="index.jsp" role="button">Volver a Inicio</a> 
             </div>
         </div>
