@@ -56,12 +56,12 @@ person.setDui(dui);
 person.setApellidos(apellidos);
 person.setNombres(nombres);
         
-if(person.insertarDatos() == true){
+if(person.insertarDatos()){
 request.getRequestDispatcher("exito.jsp").forward(request, response);
 }else{
 request.getRequestDispatcher("noexito.jsp").forward(request, response);
 }
-processRequest(request, response);
+//processRequest(request, response);
 }
     
     

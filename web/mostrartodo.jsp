@@ -28,7 +28,7 @@
                  <td>${listaTotal.dui}</td>
                  <td>${listaTotal.apellidos} </td>
                  <td>${listaTotal.nombres}</td>
-                 <td><a class="btn btn-danger ml-4" href="eliminar.do?dui=$dui=${listaTotal.dui}"><img width="30" src="Imagenes/Eliminar.png"/>Borrar</a></td>
+                 <td><a class="btn btn-danger ml-4" href="eliminar.do?dui=${listaTotal.dui}"><img width="30" src="Imagenes/Eliminar.png"/>Borrar</a></td>
                  <td><a class="btn btn-success ml-4" href="modificar.do?dui=${listaTotal.dui}"><img width="30" src="Imagenes/Editar o modificar.png"/>Modificar</a></td>
             </tr>
       </c:forEach> 

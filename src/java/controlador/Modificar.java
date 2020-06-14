@@ -56,7 +56,7 @@ public class Modificar extends HttpServlet {
             person.setApellidos(apellidos);
 
             if (person.modificarDatos(duimodificar) == true ) {                    
-                    request.getRequestDispatcher("Mostrar.do").forward(request, response);
+                    request.getRequestDispatcher("mostrar.do").forward(request, response);
                 } else {
                     request.getRequestDispatcher("noexito.jsp").forward(request, response);
                 }

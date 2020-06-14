@@ -10,7 +10,7 @@
     <div class="container pt-5 ml-5 mr-5">
         <div class="row">
             <div class="col-md-7">
-               <h1 class="alert-danger">Error no se ah Registrado!</h1>
+               <h1 class="alert-danger">Error no se a Registrado!</h1>
                 <a class="btn btn-primary mt-3" href="index.jsp" role="button">Volver a Inicio</a> 
             </div>
         </div>

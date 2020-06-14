@@ -43,7 +43,7 @@ public class Eliminar extends HttpServlet {
         }else{
             request.getRequestDispatcher("noexito.jsp").forward(request, response);
         }
-        processRequest(request, response);
+        //processRequest(request, response);
     }
 
     @Override

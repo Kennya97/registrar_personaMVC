@@ -12,13 +12,13 @@
             String apellido = (String) request.getAttribute("APELLIDOS");
             String duimodi = (String) request.getAttribute("DUIMODI");
         %>
-        <h1>Editar exitosamente!</h1>
+        <h1>Editar</h1>
         
         <form action="modificar.do" method="POST">
             <input type="hidden" name="duimodi" value="<%= duimodi%>">
             Dui <input type="text" name="txtDui" value="<%=dui%>"><br>
-            Apellido <input type="text" name="txtNombres" value="<%=nombre%>"><br>
-            Nombre <input type="text" name="txtApellidos" value="<%=apellido%>"><br>
+            Nombre <input type="text" name="txtNombres" value="<%=nombre%>"><br>
+            Apellido <input type="text" name="txtApellidos" value="<%=apellido%>"><br>
             <input type="submit" name="accion" value="actualizar">
         </form>
             <a href="index.jsp">Volver al inicio</a>

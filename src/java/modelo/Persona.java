@@ -60,7 +60,7 @@ this.nombres = nombres;
      }
   public boolean eliminar(){
          try {
-             String miQuery = "DELETE FROM tb_persona WHERE dui_persona='" + dui +"';";
+             String miQuery = "DELETE FROM tb_persona WHERE dui_persona='" + this.dui +"';";
              int estado = 0;
              state = cnn.createStatement();
              estado = state.executeUpdate(miQuery); 
@@ -93,20 +93,20 @@ this.nombres = nombres;
 //METODO PARA REGISTRAR UNA NUEVA PERSONA
  
 public boolean insertarDatos(){
+    try{
+        String miQuery = "insert into tb_persona values('" + dui + "', '" + apellidos + "', '" + nombres + "');"; //LA CONSULTA
 
- try{
-String miQuery = "insert into tb_persona values('" + dui + "', '" + apellidos + "', '" + nombres + "');"; //LA CONSULTA
-
-int estado = 0;//Estado de la inserccion 
-state = cnn.createStatement();
-estado = state.executeUpdate(miQuery);
-if(estado == 1){
-return true;
-}
-}catch(SQLException ex){
-Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
-}
-return false;
+        int estado = 0;//Estado de la inserccion 
+        state = cnn.createStatement();
+        estado = state.executeUpdate(miQuery);
+        if(estado != 1){
+            return false;
+        }
+   }catch(SQLException ex){
+   Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
+   }
+    //Modificar el redur de sql 
+    return true;
 } 
 public ArrayList<Persona> consultarRegistros(){
       ArrayList<Persona> person = new ArrayList();//Crear el array de almacenamiento de tipo Persona
