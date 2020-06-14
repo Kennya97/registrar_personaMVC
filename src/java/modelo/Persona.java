@@ -42,7 +42,22 @@ this.dui = dui;
 this.apellidos = apellidos;
 this.nombres = nombres;
 }
- 
+  public Persona buscarRegistro(String dui){
+         Persona persona = null;
+         try{
+             String sqlQuery = "SELECT * FROM tb_persona WHERE dui_persona ='" + dui +"' ;";
+             state = cnn.createStatement();
+             result = state.executeQuery(sqlQuery);
+             result.next();
+             int duiint = result.getInt("dui_persona");
+             System.out.println("El dui de la bd " + duiint);
+             String duiString =  String.valueOf(duiint);
+             persona = new Persona(duiString, result.getString("apellido_persona"), result.getString("nombre_persona"));
+         }catch(SQLException ex){
+             System.out.print("ALgo anda mal: " + ex);
+         }
+         return persona;
+     }
   public boolean eliminar(){
          try {
              String miQuery = "DELETE FROM tb_persona WHERE dui_persona='" + dui +"';";
@@ -58,7 +73,21 @@ this.nombres = nombres;
          }
          return false;
      }
- 
+     public boolean modificarDatos(String duimodificar){       
+        try{
+            String miQuery = "UPDATE tb_persona SET dui_persona = '"+ dui + "', apellido_persona = '" + apellidos + "', nombre_persona = '" + nombres +"' WHERE dui_persona = '" + duimodificar +"';";
+            int estado; //Estado de la inserccion
+            state = cnn.createStatement();
+            estado = state.executeUpdate(miQuery);
+            if(estado == 1){
+                return true;
+                 }
+            }catch (SQLException ex){
+                    Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
+                    System.out.println(ex.getMessage());
+                    }
+            return false;
+        }
  
  
 //METODO PARA REGISTRAR UNA NUEVA PERSONA
