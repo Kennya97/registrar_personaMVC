@@ -48,7 +48,7 @@ this.nombres = nombres;
              String miQuery = "DELETE FROM tb_persona WHERE dui_persona='" + dui +"';";
              int estado = 0;
              state = cnn.createStatement();
-             estado = state.executeUpdate(miQuery);
+             estado = state.executeUpdate(miQuery); 
              if(estado == 1){
                return true;
              }
@@ -79,11 +79,21 @@ Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
 }
 return false;
 } 
-
-
-
-
-
+public ArrayList<Persona> consultarRegistros(){
+      ArrayList<Persona> person = new ArrayList();//Crear el array de almacenamiento de tipo Persona
+      try{
+       String miQuery = "select * from tb_persona;";//Definiir la consulta
+       state = cnn.createStatement();//Crear el "boton" para la consulta
+       result = state.executeQuery(miQuery);// Ejecutar la consulta
+       while(result.next()){//Recorre todo el resultset y almacena en cada fila los registros encontrados
+                                                     //El nombre de ser asi como esta en la tabla de la base de datos
+           person.add(new Persona(result.getString("dui_persona"),result.getString("apellido_persona"),result.getString("nombre_persona")));
+         }
+      }catch(SQLException ex){
+        Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
+      }
+        return person; //Independientemente encuentro o no registro retorna el objeto person
+     }
 //GET Y SET
     public String getDui() {
         return dui;
@@ -109,8 +119,6 @@ return false;
         this.nombres = nombres;
     }
 
-    public ArrayList<Persona> consultarRegistros() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
 
